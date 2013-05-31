@@ -1,0 +1,2 @@
+
+iptables -t mangle -A FORWARD ! -s 10.0.0.159 -p tcp -m multiport --ports 80,443 -m connbytes --connbytes 1000000: --connbytes-dir both --connbytes-mode bytes -j MARK --set-mark 0xb
